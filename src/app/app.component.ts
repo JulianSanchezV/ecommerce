@@ -3,13 +3,14 @@ import { RouterOutlet } from '@angular/router';
 
 import { ButtonModule } from 'primeng/button';
 import { PrimeNGConfig } from 'primeng/api';
+import { HeaderComponent } from './layout/header/header.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonModule],
+  imports: [RouterOutlet, ButtonModule, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
