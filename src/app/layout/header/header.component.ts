@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import { MenuModule } from 'primeng/menu';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenubarModule],
+  imports: [MenubarModule, MenuModule, ButtonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -15,24 +17,8 @@ export class HeaderComponent {
     ngOnInit() {
         this.items = [
             {
-                label: 'File',
-                icon: 'pi pi-fw pi-file',
-            },
-            {
-                label: 'Edit',
-                icon: 'pi pi-fw pi-pencil',
-            },
-            {
-                label: 'Users',
-                icon: 'pi pi-fw pi-user',
-            },
-            {
-                label: 'Events',
-                icon: 'pi pi-fw pi-calendar',
-            },
-            {
-                label: 'Quit',
-                icon: 'pi pi-fw pi-power-off'
+                label: 'Products',
+                icon: 'pi pi-box',
             }
         ];
     }
