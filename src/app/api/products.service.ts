@@ -1,28 +1,26 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { environment } from '@envs/environment.development';
 import { Product } from '@shared/models/product.interface';
-import { tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 
 export class ProductsService {
-  public products = signal<Product[]>([]);
-  private readonly _http = inject(HttpClient);
+
   private readonly _endPoint = environment.apiURL;
 
-  constructor() {
-    this.getProducts();
+  constructor(private httpClient: HttpClient) {
   }
 
-  public getProducts(): void {
-    this._http.get<Product[]>(`${this._endPoint}/products/?sort=desc`)
-    .pipe(tap((data: Product[]) => this.products.set(data)))
-    .subscribe();
+  getProducts(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`${this._endPoint}/products?sort=desc`).pipe(res => res);
+
+
   }
 
   public getProductById(id: number) {
-    return this._http.get<Product>(`${this._endPoint}/products/${id}`);
+
   }
 
 

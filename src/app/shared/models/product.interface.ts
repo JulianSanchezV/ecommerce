@@ -5,9 +5,10 @@ export interface Product {
   category: string;
   description: string;
   image: string;
-  rating: Rating;
+  rating: number;
   qty: number;
   subTotal: number;
+  status: 'INSTOCK';
 }
 
 interface Rating {

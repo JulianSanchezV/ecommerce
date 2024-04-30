@@ -11,7 +11,9 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
 export class HeaderComponent {
+
   items: MenuItem[] | undefined;
 
     ngOnInit() {

@@ -1,1 +1,56 @@
-<p>products works!</p>
+<p-carousel [value]="productsList" [numVisible]="4" >
+  <ng-template let-product pTemplate="item">
+    <div style="margin: 10px;">
+      <p-card>
+        <ng-template pTemplate="header" style="display: flex; justify-content: center;">
+          <img alt="Card" [src]="product.image" style="max-width: calc(100% - 20px); max-height: 100px; object-fit: contain; margin: 20px;" />
+        </ng-template>
+
+        <h2 style="margin-top: 1%">{{ product.title.length > 30 ? product.title.substring(0, 30) + '...' : product.title }}</h2>
+        <p>{{ product.description.length > 100 ? product.description.substring(0, 100) + '...' : product.description }}</p>
+        <p>Price: {{ product.price }} USD</p>
+        <ng-template pTemplate="footer" style="margin-top: 1%">
+          <p-button label="Save" icon="pi pi-check"></p-button>
+          <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </ng-template>
+</p-carousel>
+
+
+
+
+
+
+
+<!-- <div class="card">
+  <p-dataView #dv [value]="productsList" [rows]="5" [paginator]="true">
+      <ng-template let-products pTemplate="list">
+          <div class="grid grid-nogutter">
+              <div class="col-12" *ngFor="let item of productsList; let first = first">
+                  <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4" [ngClass]="{ 'border-top-1 surface-border': !first }">
+                      <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" [src]="item.image" [alt]="item.title" />
+                      <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+                          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+                              <div class="text-2xl font-bold text-900">{{ item.title }}</div>
+
+                              <div class="flex align-items-center gap-3">
+                                  <span class="flex align-items-center gap-2">
+                                      <i class="pi pi-tag"></i>
+                                      <span class="font-semibold">{{ item.category }}</span>
+                                  </span>
+
+                              </div>
+                          </div>
+                          <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                              <span class="text-2xl font-semibold">{{ '$' + item.price }}</span>
+                              <button pButton icon="pi pi-shopping-cart" class="md:align-self-end mb-2 p-button-rounded"></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-dataView>
+</div> -->

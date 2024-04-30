@@ -1,0 +1,1 @@
+import{Wa as i,Xa as o,_ as a,kb as r,ob as s}from"./chunk-UUB7ZCBT.js";var c=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=a({type:e,selectors:[["app-details"]],standalone:!0,features:[s],decls:2,vars:0,template:function(n,l){n&1&&(i(0,"p"),r(1,"details works!"),o())}});let t=e;return t})();export{c as default};
