@@ -3,20 +3,22 @@
     <div style="margin: 10px;">
       <p-card>
         <ng-template pTemplate="header" style="display: flex; justify-content: center;">
-          <img alt="Card" [src]="product.image" style="max-width: calc(100% - 20px); max-height: 100px; object-fit: contain; margin: 20px;" />
+          <img alt="Card" [src]="product.image" lazyload="true" style="max-width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;" />
+
         </ng-template>
 
-        <h2 style="margin-top: 1%">{{ product.title.length > 30 ? product.title.substring(0, 30) + '...' : product.title }}</h2>
+        <h2 style="margin-top: 5px;">{{ product.title.length > 30 ? product.title.substring(0, 30) + '...' : product.title }}</h2>
         <p>{{ product.description.length > 100 ? product.description.substring(0, 100) + '...' : product.description }}</p>
         <p>Price: {{ product.price }} USD</p>
-        <ng-template pTemplate="footer" style="margin-top: 1%">
-          <p-button label="Save" icon="pi pi-check"></p-button>
-          <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+        <ng-template pTemplate="footer" style="margin-top: 5px;">
+          <p-button label="Save"></p-button>
+          <p-button label="Cancel" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
         </ng-template>
       </p-card>
     </div>
   </ng-template>
 </p-carousel>
+
 
 
 
