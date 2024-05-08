@@ -8,6 +8,13 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 
+import { DataViewModule } from 'primeng/dataview';
+import { PaginatorModule } from 'primeng/paginator';
+import { ImageModule } from 'primeng/image';
+import { Card } from 'primeng/card';
+
+
+
 
 
 
@@ -20,7 +27,10 @@ import { CarouselModule } from 'primeng/carousel';
     CardComponent,
     ButtonModule,
     CardModule,
-    CarouselModule
+    CarouselModule,
+    DataViewModule,
+    PaginatorModule,
+    ImageModule
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',

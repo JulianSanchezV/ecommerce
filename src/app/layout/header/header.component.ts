@@ -19,8 +19,24 @@ export class HeaderComponent {
     ngOnInit() {
         this.items = [
             {
-                label: 'Products',
-                icon: 'pi pi-box',
+                label: 'All Products'
+            },
+            {
+              label: 'Categories',
+              items: [
+                {
+                  label: 'Electronics'
+                },
+                {
+                  label: 'Jewerly'
+                },
+                {
+                  label: 'Mens Clothing'
+                },
+                {
+                  label: 'Womens Clothing'
+                }
+              ]
             }
         ];
     }

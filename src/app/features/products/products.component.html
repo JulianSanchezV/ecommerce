@@ -1,25 +1,21 @@
-<p-carousel [value]="productsList" [numVisible]="4" >
-  <ng-template let-product pTemplate="item">
-    <div style="margin: 10px;">
-      <p-card>
-        <ng-template pTemplate="header" style="display: flex; justify-content: center;">
-          <img alt="Card" [src]="product.image" lazyload="true" style="max-width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;" />
 
-        </ng-template>
-
-        <h2 style="margin-top: 5px;">{{ product.title.length > 30 ? product.title.substring(0, 30) + '...' : product.title }}</h2>
-        <p>{{ product.description.length > 100 ? product.description.substring(0, 100) + '...' : product.description }}</p>
-        <p>Price: {{ product.price }} USD</p>
-        <ng-template pTemplate="footer" style="margin-top: 5px;">
-          <p-button label="Save"></p-button>
-          <p-button label="Cancel" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-        </ng-template>
-      </p-card>
-    </div>
-  </ng-template>
-</p-carousel>
-
-
+  <div class="product-grid" style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <ng-container *ngFor="let item of productsList">
+      <div class="product-item" style="flex: 0 0 calc(25% - 20px); margin: 10px;">
+        <p-card [style]="{ width: '100%' }">
+          <img src="{{ item.image }}" alt="{{ item.title }}" class="product-image" style="width: 100%; object-fit: contain;" />
+          <div class="product-info p-4">
+            <h5 class="product-title">{{ item.title }}</h5>
+            <p class="product-category">{{ item.category }}</p>
+            <span class="product-price">{{ '$' + item.price }}</span>
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <p-button>Add to cart</p-button>
+          </div>
+        </p-card>
+      </div>
+    </ng-container>
+  </div>
 
 
 
