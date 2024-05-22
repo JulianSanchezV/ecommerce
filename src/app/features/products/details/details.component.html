@@ -1,1 +1,17 @@
-<p>details works!</p>
+<p-panel header="Details">
+  <p-card>
+    <ng-template pTemplate="header">
+      <div style="display: flex; align-items: center;">
+        <img [src]="" alt="Product Image" style="width: 100px; height: 100px; margin-right: 20px;"/>
+        <span style="font-size: 1.5em; font-weight: bold;">TITLE</span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div style="margin-top: 20px;">
+        <p>DESCRIPTION</p>
+        <h2>PRICE</h2>
+        <button pButton type="button" label="Add to Cart" icon="pi pi-shopping-cart"></button>
+      </div>
+    </ng-template>
+  </p-card>
+</p-panel>

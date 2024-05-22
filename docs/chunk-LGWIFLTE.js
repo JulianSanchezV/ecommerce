@@ -1,0 +1,1 @@
+import{Z as o,Za as a,_a as i,ob as r,vb as c}from"./chunk-JF7S4RXW.js";import"./chunk-TMC7WMLO.js";var f=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["app-checkout"]],standalone:!0,features:[c],decls:2,vars:0,template:function(n,p){n&1&&(a(0,"p"),r(1,"checkout works!"),i())}});let t=e;return t})();export{f as default};
