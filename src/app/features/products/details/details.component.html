@@ -1,17 +1,21 @@
-<p-panel header="Details">
+
   <p-card>
-    <ng-template pTemplate="header">
-      <div style="display: flex; align-items: center;">
-        <img [src]="" alt="Product Image" style="width: 100px; height: 100px; margin-right: 20px;"/>
-        <span style="font-size: 1.5em; font-weight: bold;">TITLE</span>
-      </div>
-    </ng-template>
     <ng-template pTemplate="content">
-      <div style="margin-top: 20px;">
-        <p>DESCRIPTION</p>
-        <h2>PRICE</h2>
-        <button pButton type="button" label="Add to Cart" icon="pi pi-shopping-cart"></button>
+      <div style="display: flex;">
+        <!-- Imagen centrada en la columna -->
+        <div style="flex: 0 0 auto; display: flex; justify-content: center; align-items: center;">
+          <img *ngIf="product" [src]="product.image" alt="Product Image" style="width: 50%; height: auto;"/>
+        </div>
+        <!-- Título, descripción y botón centrados vertical y horizontalmente -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div style="font-size: 1.5em; font-weight: bold;">{{ product?.title }}</div>
+          <div style="margin-top: 20px; text-align: center;">
+            <p>{{ product?.description }}</p>
+            <h2>{{ product?.price | currency }}</h2>
+            <button pButton type="button" label="Add to Cart" icon="pi pi-shopping-cart"></button>
+          </div>
+        </div>
       </div>
     </ng-template>
   </p-card>
-</p-panel>
+

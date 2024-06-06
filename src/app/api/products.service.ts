@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable} from '@angular/core';
+import { EnvironmentInjector, Injectable, inject } from '@angular/core';
 import { environment } from '@envs/environment.development';
 import { Product } from '@shared/models/product.interface';
 import { Observable } from 'rxjs';
@@ -9,19 +9,26 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
   private readonly _endPoint = environment.apiURL;
+  private readonly _http = inject(HttpClient);
+  private readonly _injector = inject(EnvironmentInjector);
 
   constructor(private httpClient: HttpClient) {
   }
 
   getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(`${this._endPoint}/products?sort=desc`).pipe(res => res);
-
-
   }
 
-  public getProductById(id: number) {
-
+  getProductById(id: number): Observable<Product> {
+    return this._http.get<Product>(`${this._endPoint}/products/${id}`);
   }
-
-
 }
+
+
+
+
+
+
+
+
+
